@@ -45,13 +45,13 @@ jobs:
       run: dotnet build --configuration Release
 
     - name: Publish
-      run: dotnet publish --configuration Release --output D:\a\MyMvcApp-Contact-Databse-Application\MyMvcApp-Contact-Databse-Application\bin\Release\net8.0\MyMvcApp
+      run: dotnet publish --configuration Release --output C:\Users\azureuser\Desktop\MyMvcApp-Contact-Database-Application
 
     - name: Upload artifact for deployment job
       uses: actions/upload-artifact@v2
       with:
         name: dotnet-app
-        path: D:\a\MyMvcApp-Contact-Databse-Application\MyMvcApp-Contact-Databse-Application\bin\Release\net8.0\MyMvcApp
+        path: C:\Users\azureuser\Desktop\MyMvcApp-Contact-Database-Application
 
   deploy:
     runs-on: ubuntu-latest
@@ -71,4 +71,4 @@ jobs:
       with:
         app-name: 'myMvcApp'
         publish-profile: ${{ secrets.AzureWebAppPublishProfile }}
-        package: D:\a\MyMvcApp-Contact-Databse-Application\MyMvcApp-Contact-Databse-Application\bin\Release\net8.0\MyMvcApp
+        package: C:\Users\azureuser\Desktop\MyMvcApp-Contact-Database-Application
