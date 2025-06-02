@@ -29,7 +29,7 @@ jobs:
       - name: Deploy ARM template
         uses: azure/arm-deploy@v1
         with:
-          subscriptionId: AZURE HOL 1141
+          subscriptionId: a4b6ad7a-b698-4a78-b964-0a4af67bd886
           resourceGroupName: Github-Copilot-Challenges
           template: ./deploy.json
           parameters: ./deploy.parameters.json
