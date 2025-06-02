@@ -11,17 +11,19 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v2
 
-      - name: Setup .NET
-        uses: actions/setup-dotnet@v4
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v1
         with:
           dotnet-version: '8.0.x'
+      - name: Restore dependencies
+        run: dotnet restore
 
-      - name: Build solution
-        run: dotnet build
+      - name: Build
+        run: dotnet build --configuration Release
 
-      - name: Publish app
+      - name: Publish
         run: dotnet publish -c Release -o ./publish
 
       - name: Deploy ARM template
